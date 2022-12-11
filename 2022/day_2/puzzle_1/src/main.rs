@@ -1,18 +1,4 @@
-use std::{fs};
-
-fn read_input_lines() -> Vec<String> {
-
-    let file_path = "./input.txt";
-    // --snip--
-    println!("In file {}", file_path);
-
-    // Read the file
-    let contents = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
-
-    // Split by lines
-    return contents.split("\n").map(|x| x.to_string()).collect();
-}
+use aoc_utils::read_input_lines;
 
 #[derive(PartialEq)]
 enum RPS {
@@ -78,7 +64,7 @@ fn compute_score(line: &String) -> i32 {
 }
 
 fn main() {
-    let lines = read_input_lines();
+    let lines = read_input_lines("2022/day_2/input.txt");
     let scores : i32 = lines.iter().map(compute_score).sum();
 
     print!("Scores {scores:?}")

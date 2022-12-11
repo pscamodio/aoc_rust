@@ -1,19 +1,11 @@
-use std::fs;
+use aoc_utils::read_input_lines;
 
 fn main() {
-    let file_path = "./input.txt";
-    // --snip--
-    println!("In file {}", file_path);
-
-    // Read the file
-    let contents = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
-
     // Split by lines
-    let contents = contents.split("\n");
+    let lines = read_input_lines("2022/day_1/input.txt");
 
     // Parse all numbers to int
-    let contents = contents.map(|x| match x.is_empty() {
+    let contents = lines.iter().map(|x| match x.is_empty() {
         true => None,
         false => Some(x.trim().parse::<i32>().expect("not a number"))
     });
