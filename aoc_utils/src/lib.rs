@@ -1,16 +1,17 @@
-use std::fs;
+use std::{fs, io};
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+pub mod day1;
+pub mod day2;
 
-pub fn read_input_lines(file_path: &str) -> Vec<String> {
+/// Read a files and return a vector of string one for line
+/// # Arguments
+/// * 'file_path' - Path to the input file from the project root
+pub fn read_input_lines(file_path: &str) -> io::Result<Vec<String>> {
     println!("In file {}", file_path);
 
     // Read the file
-    let contents = fs::read_to_string(file_path)
-        .expect("Should have been able to read the file");
+    let contents = fs::read_to_string(file_path)?;
 
     // Split by lines
-    return contents.split("\n").map(|x| x.to_string()).collect();
+    return Ok(contents.split("\n").map(|x| x.to_string()).collect());
 }
