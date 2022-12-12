@@ -2,6 +2,7 @@ use std::{fs, io};
 
 pub mod day1;
 pub mod day2;
+pub mod day3;
 
 /// Read a files and return a vector of string one for line
 /// # Arguments
