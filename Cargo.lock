@@ -53,6 +53,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "day_12_puzzle_1"
+version = "0.1.0"
+dependencies = [
+ "aoc_utils",
+]
+
+[[package]]
+name = "day_12_puzzle_2"
+version = "0.1.0"
+dependencies = [
+ "aoc_utils",
+]
+
+[[package]]
 name = "day_1_puzzle_1"
 version = "0.1.0"
 dependencies = [
